@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://sinharahulandco.com/sitemap.xml
+Host: https://sinharahulandco.com
