@@ -30,7 +30,7 @@ const partners = [
     bio: "Riddhi is an Associate Chartered Accountant with a Commerce background, contributing to the firm's growing bench of technical talent. As part of the team's next generation of professionals, she brings fresh, up-to-date training to client engagements, working closely with the firm's senior partners across audit and compliance assignments.",
   },
   {
-    name: "CS Amrapali",
+    name: "CS Amrapali Shrivastav",
     role: "Our CS",
     slug: "cs-amrapali",
     image: amrapali,
@@ -60,8 +60,8 @@ export default function TeamPage() {
           {partners.map((p, i) => (
             <article id={p.slug} key={p.name} data-delay={(i % 3) + 1} className="reveal reveal-up flex flex-col gap-8 bg-card p-8 shadow-(--shadow-card) md:flex-row md:p-10">
               <div className="shrink-0">
-                <div className="h-40 w-40 overflow-hidden rounded-full bg-surface">
-                  <img src={p.image} alt={p.name} className="h-full w-full object-cover" />
+                <div className={`h-52 w-40 overflow-hidden rounded-none bg-surface ${p.slug === "rahul-sinha" ? "translate-y-6" : ""}`}>
+                  <img src={p.image} alt={p.name} className="h-full w-full object-cover object-center" />
                 </div>
               </div>
               <div className="flex-1">

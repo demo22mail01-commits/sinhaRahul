@@ -62,7 +62,7 @@ const team = [
   { name: "Rahul Sinha", role: "Founding Partner", slug: "rahul-sinha", image: rahulSinha },
   { name: "Dheeraj Sihota", role: "Partner", slug: "dheeraj-sihota", image: dheerajSihota },
   { name: "Riddhi Khandelwal", role: "Partner", slug: "riddhi-khandelwal", image: riddhi },
-  { name: "CS Amrapali", role: "Our CS", slug: "cs-amrapali", image: amrapali },
+  { name: "CS Amrapali Shrivastav", role: "Our CS", slug: "cs-amrapali", image: amrapali },
   { name: "Aman Bansal", role: "Associate", slug: "aman-bansal", image: amanBansal },
 ];
 
@@ -315,12 +315,12 @@ function Index() {
                 <div key={s.title} className="snap-start pl-4 md:basis-[45%] lg:basis-[33%]">
                   <Link
                     to={`/services/${s.slug}`}
-                    className="group relative flex flex-col h-full min-h-80 overflow-hidden rounded-3xl border border-border bg-card p-8 text-card-foreground shadow-(--shadow-card) transition-all duration-500 hover:-translate-y-1 hover:bg-[rgb(18,27,53)] hover:text-white hover:shadow-(--shadow-elevated)"
+                    className="group relative flex flex-col h-full min-h-80 overflow-hidden rounded-3xl border border-border bg-card p-8 text-card-foreground shadow-(--shadow-card) transition-all duration-500 hover:-translate-y-1 hover:bg-primary hover:text-white hover:shadow-(--shadow-elevated)"
                   >
                     <span className="absolute right-6 top-4 font-display text-6xl font-bold text-foreground/10 transition-colors duration-500 group-hover:text-white/25">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <div className="mb-6 grid h-14 w-14 place-items-center rounded-3xl bg-primary/10 text-primary transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white">
+                    <div className="mb-6 grid h-14 w-14 place-items-center rounded-3xl bg-primary/10 text-primary transition-colors duration-500 group-hover:bg-primary/90 group-hover:text-white">
                       <Icon className="h-7 w-7" strokeWidth={2.2} />
                     </div>
                     <h3 className="font-display text-2xl font-bold uppercase text-foreground transition-colors duration-500 group-hover:text-white">
@@ -380,7 +380,7 @@ function Index() {
           <div className="grid gap-4 md:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={stat.label} className="reveal reveal-up overflow-hidden rounded-3xl border border-border bg-card p-8 text-center shadow-(--shadow-card)">
-                <div className="text-5xl font-extrabold text-primary">
+                <div className="text-5xl font-extrabold text-[rgb(18,27,53)]">
                   {counts[index].toLocaleString()}<span className="text-2xl font-semibold">{stat.suffix}</span>
                 </div>
                 <div className="mt-4 text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
