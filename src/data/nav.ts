@@ -13,6 +13,14 @@ export const SERVICES_LIST = [
   { slug: "business-setup-and-fund-raising-advisory", title: "Business Setup & Fund Raising Advisory" },
 ];
 
+export const KNOWLEDGE_LIST = [
+  { slug: "acts", title: "Acts & Legislations" },
+  { slug: "rules", title: "Rules & Regulations" },
+  { slug: "notifications", title: "Notifications" },
+  { slug: "circulars", title: "Circulars" },
+];
+
 export default {
   SERVICES_LIST,
+  KNOWLEDGE_LIST,
 };

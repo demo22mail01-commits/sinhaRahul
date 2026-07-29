@@ -41,17 +41,59 @@ export default function KnowledgePage() {
   const { slug } = useParams();
   const item = KNOWLEDGE_LIST.find((k) => k.slug === slug);
   const list = slug ? CONTENT[slug] : undefined;
+  const isLanding = !slug || !item || !list;
 
-  if (!item || !list) {
+  if (isLanding) {
     return (
       <SiteLayout>
         <Seo
-          title="Knowledge Bank Item Not Found"
-          description="The requested knowledge bank item could not be found. Browse CA Sinha Rahul & Co.'s accounting, audit and compliance resources."
+          title="Knowledge Bank | CA Sinha Rahul & Co."
+          description="Explore practical knowledge resources on tax, audit, compliance, and regulatory updates from CA Sinha Rahul & Co."
           path="/knowledge-bank"
         />
-        <PageHero title="Not Found" crumb="Knowledge Bank" image={heroImg} />
-        <div className="container-x py-20">Item not found.</div>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={heroImg} alt="" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.6)_55%,rgba(0,0,0,0.35)_100%)]" />
+          </div>
+          <div className="container-x relative flex min-h-105 items-center py-24">
+            <div className="max-w-3xl rounded-4xl border border-white/20 bg-white/10 p-8 text-white shadow-(--shadow-elevated) backdrop-blur-md">
+              <div className="section-eyebrow text-primary">Knowledge Bank</div>
+              <h1 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">
+                Practical resources for tax, audit, and compliance decisions.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
+                Our Knowledge Bank brings together key regulatory updates, acts, rules, notifications, and circulars in one place for professionals and business owners.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container-x space-y-8">
+            <div className="rounded-4xl border border-border bg-linear-to-br from-primary/10 via-background to-card p-8 shadow-(--shadow-card)">
+              <div className="section-eyebrow">What you will find</div>
+              <h2 className="mt-3 font-display text-3xl font-bold uppercase text-foreground">Useful insights for modern businesses</h2>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-muted-foreground">
+                From tax acts and compliance rules to circulars and regulatory updates, the Knowledge Bank is designed to keep clients better informed with structured, practical resources.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+              {KNOWLEDGE_LIST.map((k) => (
+                <Link key={k.slug} to={`/knowledge-bank/${k.slug}`} className="group rounded-3xl border border-border bg-card p-6 shadow-(--shadow-card) transition-all duration-300 hover:-translate-y-1 hover:border-primary">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <FileText className="h-5 w-5" />
+                  </div>
+                  <div className="mt-5 font-display text-xl font-bold uppercase text-foreground">{k.title}</div>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    Browse curated resources covering essential legal and regulatory references for your business.
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       </SiteLayout>
     );
   }
@@ -66,7 +108,13 @@ export default function KnowledgePage() {
       <PageHero title={item.title} crumb={item.title} image={heroImg} />
       <section className="py-20">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_280px]">
-          <div className="reveal reveal-up space-y-3">
+          <div className="reveal reveal-up space-y-4">
+            <div className="rounded-3xl border border-border bg-card p-6 shadow-(--shadow-card)">
+              <div className="font-display text-xl font-bold uppercase text-primary">{item.title}</div>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Stay informed with a curated collection of important references and updates tailored for clients, founders, and finance teams.
+              </p>
+            </div>
             {list.map((l: string) => (
               <div key={l} className="group flex items-center gap-4 bg-card p-5 shadow-(--shadow-card) transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground">
                 <FileText className="h-5 w-5 shrink-0 text-primary transition-colors group-hover:text-primary-foreground" />

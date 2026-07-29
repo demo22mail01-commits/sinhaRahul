@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { SERVICES_LIST } from "../data/nav";
 import {
-  Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ChevronUp, Menu, ChevronDown,
+  Phone, Mail, MapPin, Facebook, Instagram, Linkedin, MessageCircle, ChevronUp, Menu, ChevronDown,
 } from "lucide-react";
 import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
 import footerBg from "@/assets/footer-bg.jpg";
@@ -21,6 +21,7 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
   },
   { label: "International Services", to: "/services/international-taxation" },
   { label: "Blog", to: "/blog" },
+  { label: "Knowledge Bank", to: "/knowledge-bank" },
   { label: "Careers", to: "/careers" },
   { label: "Contact Us", to: "/contact-us" },
 ];
@@ -53,74 +54,100 @@ const handleProtocolClick = (href: string) => (event: MouseEvent<HTMLAnchorEleme
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="container-x flex h-20 items-center justify-between gap-6">
-        <Link to="/" className="flex shrink-0 items-center">
-          <div className="flex h-14 items-center pl-3 pr-5 text-white shadow-(--shadow-card)" style={{ backgroundColor: 'rgb(18,27,53)' }}>
-            <div className="mr-3 grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-white text-primary">
-              <span className="font-display text-xl font-extrabold leading-none">CA</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-display text-base font-bold uppercase tracking-wide sm:text-lg">Sinha Rahul & Co.</div>
-              <div className="text-[9px] font-semibold uppercase tracking-[0.25em] opacity-90 sm:text-[10px]">Chartered Accountants</div>
-            </div>
+    <div className="sticky top-0 z-40">
+      <div className="hidden border-b border-white/10 bg-[rgb(18,27,53)] text-white lg:block">
+        <div className="container-x flex flex-wrap items-center justify-between gap-3 py-2 text-[12px] font-medium">
+          <div className="flex flex-wrap items-center gap-4">
+            <a href="tel:+918560088000" className="transition hover:text-primary">+91 85600 88000</a>
+            <a href="mailto:Rksinha.1710@gmail.com" className="transition hover:text-primary">Rksinha.1710@gmail.com</a>
           </div>
-        </Link>
-        <nav className="hidden flex-1 items-center justify-end gap-x-5 text-[13px] font-semibold uppercase tracking-wide lg:flex xl:gap-x-7">
-          {NAV.map((n) => (
-            <div key={n.label} className="group relative py-2">
-              {n.to ? (
-                <Link to={n.to} className="relative whitespace-nowrap text-foreground transition-colors hover:text-primary">
-                  {n.label}
-                </Link>
-              ) : (
-                <button className="flex items-center gap-1 whitespace-nowrap text-foreground transition-colors hover:text-primary">
-                  {n.label} <ChevronDown className="h-3 w-3" />
-                </button>
-              )}
-              {n.children && (
-                <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border border-border bg-card opacity-0 shadow-(--shadow-elevated) transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                  {n.children.map((c) => (
-                    <Link key={c.to} to={c.to} className="block px-5 py-3 text-[13px] font-semibold uppercase text-foreground transition-colors hover:bg-primary hover:text-primary-foreground">
-                      {c.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden" aria-label="Menu">
-          <Menu className="h-6 w-6" />
-        </button>
+          <div className="flex items-center gap-3">
+            <span className="mr-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">Follow us on:</span>
+            <a href="https://wa.me/918560088000?text=Hi%20can%20I%20get%20more%20info%20on%20this" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="rounded-full p-1.5 transition hover:bg-white/10 hover:text-primary">
+              <MessageCircle className="h-4 w-4" />
+            </a>
+            <a href="https://www.linkedin.com/company/sinha-rahul-co/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-full p-1.5 transition hover:bg-white/10 hover:text-primary">
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="https://www.instagram.com/sinharahulandco/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full p-1.5 transition hover:bg-white/10 hover:text-primary">
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a href="https://www.facebook.com/sinharahulandco/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full p-1.5 transition hover:bg-white/10 hover:text-primary">
+              <Facebook className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
-      {mobileOpen && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <div className="container-x flex flex-col py-3">
+
+      <header className="border-b border-border bg-background/95 backdrop-blur">
+        <div className="container-x flex h-20 items-center justify-between gap-6">
+          <Link to="/" className="flex shrink-0 items-center">
+            <div className="flex h-14 items-center pl-3 pr-5 text-white shadow-(--shadow-card)" style={{ backgroundColor: 'rgb(18,27,53)' }}>
+              <div className="mr-3 grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-white text-[rgb(18,27,53)]">
+                <span className="font-display text-xl font-extrabold leading-none">CA</span>
+              </div>
+              <div className="leading-tight">
+                <div className="font-display text-base font-bold uppercase tracking-wide sm:text-lg">Sinha Rahul & Co.</div>
+                <div className="text-[9px] font-semibold uppercase tracking-[0.25em] opacity-90 sm:text-[10px]">Chartered Accountants</div>
+              </div>
+            </div>
+          </Link>
+          <nav className="hidden flex-1 items-center justify-end gap-x-3 text-[12px] font-semibold uppercase tracking-wide lg:flex xl:gap-x-5">
             {NAV.map((n) => (
-              <div key={n.label} className="border-b border-border/60 py-1">
+              <div key={n.label} className="group relative py-2">
                 {n.to ? (
-                  <Link to={n.to} onClick={() => setMobileOpen(false)} className="block py-2 text-sm font-semibold uppercase tracking-wide hover:text-primary">
+                  <Link to={n.to} className="relative whitespace-nowrap text-foreground transition-colors hover:text-primary">
                     {n.label}
                   </Link>
                 ) : (
-                  <>
-                    <div className="py-2 text-sm font-semibold uppercase tracking-wide text-primary">{n.label}</div>
-                    <div className="ml-3 flex flex-col">
-                      {n.children!.map((c) => (
-                        <Link key={c.to} to={c.to} onClick={() => setMobileOpen(false)} className="py-1.5 text-xs font-medium uppercase hover:text-primary">
-                          {c.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
+                  <button className="flex items-center gap-1 whitespace-nowrap text-foreground transition-colors hover:text-primary">
+                    {n.label} <ChevronDown className="h-3 w-3" />
+                  </button>
+                )}
+                {n.children && (
+                  <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border border-border bg-card opacity-0 shadow-(--shadow-elevated) transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                    {n.children.map((c) => (
+                      <Link key={c.to} to={c.to} className="block px-5 py-3 text-[13px] font-semibold uppercase text-foreground transition-colors hover:bg-primary hover:text-primary-foreground">
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
                 )}
               </div>
             ))}
-          </div>
+          </nav>
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden" aria-label="Menu">
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
-      )}
-    </header>
+        {mobileOpen && (
+          <div className="border-t border-border bg-background lg:hidden">
+            <div className="container-x flex flex-col py-3">
+              {NAV.map((n) => (
+                <div key={n.label} className="border-b border-border/60 py-1">
+                  {n.to ? (
+                    <Link to={n.to} onClick={() => setMobileOpen(false)} className="block py-2 text-sm font-semibold uppercase tracking-wide hover:text-primary">
+                      {n.label}
+                    </Link>
+                  ) : (
+                    <>
+                      <div className="py-2 text-sm font-semibold uppercase tracking-wide text-primary">{n.label}</div>
+                      <div className="ml-3 flex flex-col">
+                        {n.children!.map((c) => (
+                          <Link key={c.to} to={c.to} onClick={() => setMobileOpen(false)} className="py-1.5 text-xs font-medium uppercase hover:text-primary">
+                            {c.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
+    </div>
   );
 }
 

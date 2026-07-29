@@ -8,10 +8,10 @@ import heroImg from "@/assets/hero-accountants.jpg";
 import about1 from "@/assets/about-1.jpg";
 import about2 from "@/assets/about-2.jpg";
 import rahulSinha from "@/assets/rahul_sinha.jpeg";
-import dheerajSihota from "@/assets/dheeraj sihota.jpeg";
-import amanBansal from "@/assets/aman_bansal.jpeg";
-import riddhi from "@/assets/riddhi.jpeg";
-import amrapali from "@/assets/amrapali.jpeg";
+import dheerajSihota from "@/assets/dheeraj_sihota.png";
+import amanBansal from "@/assets/amanbansal.png";
+import riddhi from "@/assets/riddhi_khandelwal.jpeg";
+import amrapali from "@/assets/cs_amrapali.png";
 import { SiteLayout } from "@/components/site-layout";
 import { Seo } from "@/components/seo";
 import { createContactRow, type SheetContactRow } from "@/lib/sheety";
@@ -233,7 +233,7 @@ function Index() {
         </div>
         <div className="absolute -right-24 -top-24 hidden h-130 w-130 rounded-full bg-primary/90 md:block" />
 
-        <div className="absolute right-10 top-16 hidden h-36 w-36 md:block lg:right-20 lg:top-24 lg:h-40 lg:w-40">
+        <div className="absolute right-3 top-4 block h-24 w-24 sm:right-8 sm:top-8 sm:h-28 sm:w-28 md:right-10 md:top-16 md:block md:h-36 md:w-36 lg:right-20 lg:top-24 lg:h-40 lg:w-40">
           <div className="relative h-full w-full">
             <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-spin-slow text-white">
               <defs>
@@ -245,11 +245,11 @@ function Index() {
                 </textPath>
               </text>
             </svg>
-            <div className="absolute inset-6 grid place-items-center rounded-full bg-white shadow-2xl">
+            <div className="absolute inset-3 grid place-items-center rounded-full bg-white shadow-2xl sm:inset-5 md:inset-6">
               <div className="text-center">
-                <div className="font-display text-2xl font-extrabold text-primary leading-none">CA</div>
-                <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-foreground">Sinha Rahul</div>
-                <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-foreground">& Co.</div>
+                <div className="font-display text-[15px] font-extrabold leading-none text-primary sm:text-xl md:text-2xl">CA</div>
+                <div className="mt-1 text-[6px] font-semibold uppercase tracking-[0.16em] text-foreground sm:text-[8px] md:text-[9px]">Sinha Rahul</div>
+                <div className="text-[6px] font-semibold uppercase tracking-[0.16em] text-foreground sm:text-[8px] md:text-[9px]">& Co.</div>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ function Index() {
             <div className="reveal reveal-left mb-8 h-0.75 w-40 bg-primary" data-delay="1" />
             <h1 className="heading-display reveal reveal-up text-white" data-delay="2">
               Welcome To<br />
-              <span className="text-white">CA Sinha Rahul & Co.</span>
+              <span className="text-white">Sinha Rahul & Co.</span>
             </h1>
           </div>
         </div>
@@ -315,7 +315,7 @@ function Index() {
                 <div key={s.title} className="snap-start pl-4 md:basis-[45%] lg:basis-[33%]">
                   <Link
                     to={`/services/${s.slug}`}
-                    className="group relative flex flex-col h-full min-h-80 overflow-hidden rounded-3xl border border-border bg-card p-8 text-card-foreground shadow-(--shadow-card) transition-all duration-500 hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground hover:shadow-(--shadow-elevated)"
+                    className="group relative flex flex-col h-full min-h-80 overflow-hidden rounded-3xl border border-border bg-card p-8 text-card-foreground shadow-(--shadow-card) transition-all duration-500 hover:-translate-y-1 hover:bg-[rgb(18,27,53)] hover:text-white hover:shadow-(--shadow-elevated)"
                   >
                     <span className="absolute right-6 top-4 font-display text-6xl font-bold text-foreground/10 transition-colors duration-500 group-hover:text-white/25">
                       {String(i + 1).padStart(2, "0")}
@@ -331,7 +331,7 @@ function Index() {
                     </p>
                     <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-foreground transition-colors duration-500 group-hover:text-white">
                       Read More
-                      <span className="grid h-5 w-5 place-items-center rounded-full bg-primary text-primary-foreground transition-colors duration-500 group-hover:bg-white group-hover:text-primary">+</span>
+                      <span className="grid h-5 w-5 place-items-center rounded-full bg-primary text-primary-foreground transition-colors duration-500 group-hover:bg-white group-hover:text-[rgb(18,27,53)]">+</span>
                     </span>
                   </Link>
                 </div>
@@ -367,7 +367,7 @@ function Index() {
             <img src={about1} alt="Chartered accountants at work" width={1200} height={900} loading="lazy" className="w-full object-cover shadow-(--shadow-elevated)" />
             <img src={about2} alt="Team meeting" width={900} height={700} loading="lazy" className="absolute -bottom-10 right-0 hidden w-64 border-8 border-background object-cover shadow-(--shadow-elevated) sm:block md:w-80" />
             <div className="absolute -bottom-6 left-6 animate-float bg-primary px-8 py-6 text-primary-foreground shadow-(--shadow-elevated)" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%)" }}>
-              <div className="font-display text-5xl font-extrabold leading-none">20+</div>
+              <div className="font-display text-5xl font-extrabold leading-none">8+</div>
               <div className="mt-2 text-sm font-semibold uppercase tracking-wider">Years of<br />Experience</div>
             </div>
           </div>
