@@ -30,11 +30,11 @@ const partners = [
     bio: "Riddhi is an Associate Chartered Accountant with a Commerce background, contributing to the firm's growing bench of technical talent. As part of the team's next generation of professionals, she brings fresh, up-to-date training to client engagements, working closely with the firm's senior partners across audit and compliance assignments.",
   },
   {
-    name: "CS Amrapali Shrivastav",
+    name: "CS Amrapali Srivastava",
     role: "Our CS",
     slug: "cs-amrapali",
     image: amrapali,
-    bio: "CS Amrapali brings focused support in corporate compliance and governance, helping clients navigate the procedural and regulatory dimensions of business operations with clarity and precision.",
+    bio: "CS Amrapali Shrivastav is a qualified Company Secretary and Commerce graduate, contributing to the firm’s corporate compliance and governance practice. She assists clients across a wide range of secretarial and regulatory matters, helping businesses navigate statutory requirements with clarity, accuracy, and a client-focused approach.",
   },
   {
     name: "Aman Bansal",

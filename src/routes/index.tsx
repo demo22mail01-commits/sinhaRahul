@@ -62,7 +62,7 @@ const team = [
   { name: "Rahul Sinha", role: "Founding Partner", slug: "rahul-sinha", image: rahulSinha },
   { name: "Dheeraj Sihota", role: "Partner", slug: "dheeraj-sihota", image: dheerajSihota },
   { name: "Riddhi Khandelwal", role: "Partner", slug: "riddhi-khandelwal", image: riddhi },
-  { name: "CS Amrapali Shrivastav", role: "Our CS", slug: "cs-amrapali", image: amrapali },
+  { name: "CS Amrapali Srivastava", role: "Our CS", slug: "cs-amrapali", image: amrapali },
   { name: "Aman Bansal", role: "Associate", slug: "aman-bansal", image: amanBansal },
 ];
 
